@@ -1,0 +1,285 @@
+
+
+html {
+    min-width: 1000px;
+    background: url("old_paper_texture.jpg"); 
+    background-size: cover;
+    // box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.4);
+}
+
+.grainy-text {
+    // position: relative;
+    // font-size: 4rem;
+    // font-weight: bold;
+    //color: #000; /* Base text color */
+    background-image: url('noise.svg'), linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+    filter: contrast(140%);
+    background-blend-mode: multiply;
+
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // background-size: 10px 10px;
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // display: inline-block;
+  
+    // /* Soft blurry shadow to enhance the grain effect */
+    // text-shadow: 
+    //   1px 1px 0 rgba(255, 255, 255, 0.1),
+    //   -1px -1px 0 rgba(0, 0, 0, 0.05),
+    //   2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    margin: 0px 32px;
+    text-transform: uppercase;
+    font-family: "Bowlby One", serif;
+    font-weight: 400;
+//   font-style: normal;
+    font-size: 9.2vw;
+    transform: scale(1, 1.6);
+
+}
+
+.subtitle {
+    margin: 0px 24px;
+    text-transform: uppercase;
+    font-family: "Bowlby One", serif;
+    font-size: 5.5vw;
+    transform: scale(1, 0.9);
+}
+
+.subtitle-lg {
+  @extend .subtitle;
+  font-size: 6.5vw;
+}
+
+.fulljustify {
+    text-align:justify;
+}
+.fulljustify:after {
+    content: "";
+    display: inline-block;
+    width: 50%;	
+}
+#tagline {
+    height: 80px;
+    overflow: hidden;
+    line-height: 80px; /* vert-center */
+}
+
+hr {
+    border: 2px solid;
+    margin: 8px 24px;
+    border-radius: 5px;
+}
+
+.newspaper-body {
+    text-align:justify;
+    font-family: "Cutive", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    margin: 8px 24px;
+}
+
+.newspaper-body-sm {
+  @extend .newspaper-body;
+  font-size: 1.4vw;
+}
+
+strong {
+  text-transform: uppercase;
+  &:after {
+    display: inline !important;
+  }
+}
+
+.column {
+  float: left;
+  padding: 24px;
+}
+
+.column-sm {
+  @extend .column;
+  // max-width: 320px;
+  flex: 1 3 20%;
+}
+
+.column-med {
+  @extend .column;
+  min-width: 30%;
+  flex: 2 1 auto;
+}
+
+.column-lg {
+  @extend .column;
+  min-width: 40%;
+  flex: 3 1 auto;
+}
+.column-xl {
+  @extend .column;
+  min-width: 60%;
+  flex: 3 1 auto;
+}
+
+li {
+  margin-bottom: 4px;
+  text-align:start;
+}
+
+.p-24 { 
+  padding: 24px;
+ }
+ .m-16 {
+  margin: 16px;
+ }
+ .mb-24 {
+  margin-bottom: 24px;
+ }
+ .m-24 {
+  margin: 24px;
+ }
+
+
+  
+  /* Clear floats after the columns */
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    :after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .row > * {
+    flex: 1 1 0;
+  }
+
+  .old-image {
+    filter: blur(1px) contrast(1.2) sepia(1);
+    -webkit-mask: radial-gradient(#000, #0009);
+    opacity: 0.8;
+
+    width: 100%;
+    height: auto;
+  }
+
+  .old-image-projects {
+    @extend .old-image;
+    filter: blur(0.5px) contrast(1.2) sepia(1);
+    &:hover {
+      filter: none;
+
+    }
+  }
+  
+
+
+  ::-webkit-scrollbar {
+    width: 0.1px;
+    height: 0.1px;
+    background: transparent;
+  }
+  
+  // /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    background-blend-mode: darken;
+  }
+   
+  // /* Handle */
+  // ::-webkit-scrollbar-thumb {
+  //   background: #888; 
+  // }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling for individual social icon buttons */
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Round shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Icon color */
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease;
+}
+
+.blog-link {
+  font-size: 1.4vw;
+  padding: 16px;
+  margin-bottom: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-shadow: -1px 1px 3px #65412b
+}
+
+.blog-link-inverted {
+  @extend .blog-link;
+  background-image: url('noise.svg'), linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+  filter: contrast(140%);
+  background-blend-mode: multiply;
+  color: white;
+  mix-blend-mode: darken;
+  border-radius: 8px;
+  a {
+    text-decoration: none;
+    color: white;
+    text-shadow: -1px 1px 3px #cea48a
+  }
+}
+
+.border-left {
+  border-left: 2px dashed black;
+}
+
+.education {
+  padding: 24px;
+  float: left;
+  width: 35%;
+  margin: 24px;
+}
+
+.skills {
+  padding: 24px;
+  float: right;
+  width: 20%;
+  margin: 24px;
+}
+
+.number-circle {
+  float: left;
+  margin: 8px;
+  display: inline-flex;  /* Aligns the content horizontally */
+  justify-content: center;  /* Centers the number horizontally */
+  align-items: center;  /* Centers the number vertically */
+  width: 40px;  /* Width of the circle */
+  height: 40px;  /* Height of the circle */
+  border-radius: 50%;  /* Makes the div a circle */
+  border: 2px solid black;  /* Black border around the circle */
+  font-size: 24px;  /* Font size of the number */
+  text-align: center;  /* Centers text inside the circle */
+  color: black;  /* Color of the number */
+}
