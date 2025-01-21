@@ -51,7 +51,11 @@ html {
 }
 
 .subtitle-lg {
-  @extend .subtitle;
+  margin: 0px 24px;
+  text-transform: uppercase;
+  font-family: "Bowlby One", serif;
+  font-size: 5.5vw;
+  transform: scale(1, 0.9);
   font-size: 6.5vw;
 }
 
@@ -70,9 +74,9 @@ html {
 }
 
 hr {
-    border: 2px solid;
-    margin: 8px 24px;
-    border-radius: 5px;
+  border: 2px solid;
+  margin: 8px 24px;
+  border-radius: 5px;
 }
 
 .newspaper-body {
@@ -85,7 +89,12 @@ hr {
 }
 
 .newspaper-body-sm {
-  @extend .newspaper-body;
+  text-align:justify;
+  font-family: "Cutive", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2vw;
+  margin: 8px 24px;
   font-size: 1.4vw;
 }
 
@@ -102,24 +111,27 @@ strong {
 }
 
 .column-sm {
-  @extend .column;
-  // max-width: 320px;
+  float: left;
+  padding: 24px;
   flex: 1 3 20%;
 }
 
 .column-med {
-  @extend .column;
+  float: left;
+  padding: 24px;
   min-width: 30%;
   flex: 2 1 auto;
 }
 
 .column-lg {
-  @extend .column;
+  float: left;
+  padding: 24px;
   min-width: 40%;
   flex: 3 1 auto;
 }
 .column-xl {
-  @extend .column;
+  float: left;
+  padding: 24px;
   min-width: 60%;
   flex: 3 1 auto;
 }
@@ -171,7 +183,12 @@ li {
   }
 
   .old-image-projects {
-    @extend .old-image;
+    filter: blur(1px) contrast(1.2) sepia(1);
+    -webkit-mask: radial-gradient(#000, #0009);
+    opacity: 0.8;
+
+    width: 100%;
+    height: auto;
     filter: blur(0.5px) contrast(1.2) sepia(1);
     &:hover {
       filter: none;
@@ -237,7 +254,9 @@ a {
 }
 
 .blog-link-inverted {
-  @extend .blog-link;
+  font-size: 1.4vw;
+  padding: 16px;
+  margin-bottom: 4px;
   background-image: url('noise.svg'), linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
   filter: contrast(140%);
   background-blend-mode: multiply;
